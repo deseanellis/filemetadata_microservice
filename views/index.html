@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DeSean Ellis | File Metadata Microservice</title>
+    <meta name="description" content="DeSean Ellis | File Metadata Microservice">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>
+      File Metadata Microservice
+    </h1>
+  </div>
+  <section>
+    <div>
+      This microservice returns the filename and filesize (in bytes) of a file that you have uploaded.
+      <br />
+      The return format is JSON.
+    </div>
+    <h2>
+      How to Use
+    </h2>
+    <p>
+      Upload your file using the box below. File size cannot be greater than 10MB.
+    </p>
+    <h2>
+      Response
+    </h2>
+    <p>
+      You will receive a JSON response:
+    </p>
+    <code>
+      `{ "name": "lolcats_funny.jpg", "size": 1846113 }`
+    </code>
+    <form method="POST" enctype="multipart/form-data" action="/api/get-file-size">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <span class="glyphicon glyphicon-cloud-upload"></span>
+                <h2>File Metadata Microservice</h2>
+                <h4 class="file-msg">Please select file, be patient as upload times may vary...</h4>
+                <button class="btn btn-lg upload-btn" type="button">Upload File</button>
+                <button class="btn btn-success btn-lg" type="submit">Submit</button>
+                <p>
+                  <br />
+                  Accepted Extensions: .gif, .jpg, .jpeg, .png, .doc, .docx, .xls, .xlsx, .csv, .txt, .xml, .pdf
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input id="upload-input" type="file" name="user_file" accept=".gif, .jpg, .jpeg, .png, .doc, .docx, .xls, .xlsx, .csv, .txt, .xml, .pdf"/>
+    </form>
+  </section>
+  
+  <br />
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
